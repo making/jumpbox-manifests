@@ -1,0 +1,43 @@
+name: jumpbox
+
+releases:
+- name: os-conf
+  version: 20
+  url: https://bosh.io/d/github.com/cloudfoundry/os-conf-release?v=20
+  sha1: 42b1295896c1fbcd36b55bfdedfe86782b2c9fba
+
+
+
+stemcells:
+- os: ubuntu-xenial
+  alias: xenial
+  version: latest
+
+instance_groups:
+- name: jumpbox
+  jobs:
+  - name: user_add
+    release: os-conf
+    properties:
+      users:
+      - name: jumpbox
+        public_key: ((jumpbox_ssh.public_key))
+  instances: 1
+  stemcell: xenial
+  azs: [z1]
+  vm_extensions:
+  - spot-instance-t2.micro
+  - standard-disk
+  vm_type: minimal
+  networks:
+  - name: default
+
+variables:
+- name: jumpbox_ssh
+  type: ssh
+
+update:
+  canaries: 1
+  max_in_flight: 3
+  canary_watch_time: 30000-600000
+  update_watch_time: 5000-600000

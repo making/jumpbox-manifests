@@ -1,0 +1,14 @@
+- type: replace
+  path: /releases/name=awscli?
+  value:
+    name: awscli
+    version: ((awscli_version))
+    url: https://github.com/making/awscli-boshrelease/releases/download/((awscli_version))/awscli-boshrelease-((awscli_version)).tgz
+    sha1: ((awscli_sha1))
+
+- type: replace
+  path: /instance_groups/name=jumpbox/jobs/name=awscli?
+  value:
+    name: awscli
+    release: awscli
+    properties: {}

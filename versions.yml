@@ -1,0 +1,10 @@
+openjdk_version: 8.0.4
+openjdk_sha1: 43979a6595282fcf4ac6269135968acc0d96d297
+toolbelt_version: 3.4.2
+toolbelt_sha1: 2b4debac0ce6115f8b265ac21b196dda206e93ed
+awscli_version: 0.0.1
+awscli_sha1: 481d9efe1f90acd91f1a7c2d679e551fe11f541e
+cf_cli_version: 1.16.0
+cf_cli_sha1: fa5d89b88a07822665d82e00f1629b98935b17e8
+git_server_version: 3
+git_server_sha1: 682a70517c495455f43545b9ae39d3f11d24d94c
