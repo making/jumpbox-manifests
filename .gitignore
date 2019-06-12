@@ -1,0 +1,8 @@
+.terraform
+terraform.tfvars
+terraform.tfstate*
+*-creds.yml
+plan
+*.pem
+ssh-jumpbox.sh
+jumpbox-state.json
