@@ -9,6 +9,7 @@ bosh -d jumpbox deploy jumpbox.yml \
   -o ops-files/awscli.yml \
   -o ops-files/cf-cli.yml \
   -o ops-files/git.yml \
+  -o ops-files/persistence-home.yml \
   -o ops-files/login-banner.yml \
   -o ops-files/pre-start.yml \
   --var-file=pre-start-script=ops-files/pre-start.sh \

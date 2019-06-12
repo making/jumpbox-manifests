@@ -17,7 +17,6 @@ instance_groups:
   - name: user_add
     release: os-conf
     properties:
-      persistent_homes: true
       users:
       - name: jumpbox
         public_key: ((jumpbox_ssh.public_key))
