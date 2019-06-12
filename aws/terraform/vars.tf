@@ -24,7 +24,7 @@ variable "env_id" {
 
 variable "vpc_cidr" {
   type    = "string"
-  default = "10.0.0.0/16"
+  default = "20.0.0.0/16"
 }
 
 variable "existing_vpc_id" {
