@@ -84,6 +84,16 @@ if [ ! -f ${INSTALLATION}/rec/yj-${YJ_VERSION} ];then
   touch ${INSTALLATION}/rec/yj-${YJ_VERSION}
 fi
 
+TERRAFORM_VERSION=0.11.14
+if [ ! -f ${INSTALLATION}/rec/terraform-${TERRAFORM_VERSION} ];then
+  wget -O- https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > /tmp/terraform.zip
+  unzip /tmp/terraform.zip
+  mv terraform ${INSTALLATION}/bin/terraform
+  rm -f /tmp/terraform.zip
+  chmod +x ${INSTALLATION}/bin/terraform
+  touch ${INSTALLATION}/rec/terraform-${TERRAFORM_VERSION}
+fi
+
 KUBECTL_VERSION=v1.14.3
 if [ ! -f ${INSTALLATION}/rec/kubectl-${KUBECTL_VERSION} ];then
   wget -O- https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl > /tmp/kubectl
