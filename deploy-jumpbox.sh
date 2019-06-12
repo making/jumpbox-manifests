@@ -5,6 +5,7 @@ bosh -d jumpbox deploy jumpbox.yml \
   -o ops-files/jq.yml \
   -o ops-files/openjdk.yml \
   -o ops-files/cf-cli.yml \
+  -o ops-files/uaac.yml \
   -o ops-files/git.yml \
   -o ops-files/persistence-home.yml \
   -o ops-files/login-banner.yml \

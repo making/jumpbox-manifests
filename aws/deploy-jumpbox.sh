@@ -43,6 +43,7 @@ EOF
   -o ${OPS_FILES}/jq.yml \
   -o ${OPS_FILES}/openjdk.yml \
   -o ${OPS_FILES}/cf-cli.yml \
+  -o ${OPS_FILES}/uaac.yml \
   -o ${OPS_FILES}/git.yml \
   -o ${OPS_FILES}/login-banner.yml \
   -o ${OPS_FILES}/persistence-home.yml \

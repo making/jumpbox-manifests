@@ -1,0 +1,14 @@
+- type: replace
+  path: /releases/name=uaac?
+  value:
+    name: uaac
+    version: ((uaac_version))
+    url: https://github.com/making/uaac-boshrelease/releases/download/((uaac_version))/uaac-boshrelease-((uaac_version)).tgz
+    sha1: ((uaac_sha1))
+
+- type: replace
+  path: /instance_groups/name=jumpbox/jobs/name=uaac?
+  value:
+    name: uaac
+    release: uaac
+    properties: {}

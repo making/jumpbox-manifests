@@ -8,3 +8,5 @@ cf_cli_version: 1.16.0
 cf_cli_sha1: fa5d89b88a07822665d82e00f1629b98935b17e8
 git_server_version: 3
 git_server_sha1: 682a70517c495455f43545b9ae39d3f11d24d94c
+uaac_version: 0.1.0
+uaac_sha1: 0db8bbeee26e3ae96b380b6cba3e7777ad9b5297

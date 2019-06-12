@@ -23,6 +23,9 @@ EOF
 cat <<'EOF' > /etc/profile.d/00-git-server.sh
 export PATH=${PATH}:/var/vcap/packages/git/bin
 EOF
+cat <<'EOF' > /etc/profile.d/00-uaac.sh
+source /var/vcap/packages/uaac/bosh/runtime.env
+EOF
 
 ########## Install CLI from internet
 export INSTALLATION=/var/vcap/store/installation
