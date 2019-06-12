@@ -102,6 +102,17 @@ if [ ! -f ${INSTALLATION}/rec/kubectl-${KUBECTL_VERSION} ];then
   touch ${INSTALLATION}/rec/kubectl-${KUBECTL_VERSION}
 fi
 
+HELM_VERSION=2.14.1
+if [ ! -f ${INSTALLATION}/rec/helm-${HELM_VERSION} ];then
+  wget -O- https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz > /tmp/helm.tgz
+  tar xzvf /tmp/helm.tgz
+  mv linux-amd64/helm ${INSTALLATION}/bin/helm
+  rm -rf linux-amd64
+  rm -f /tmp/helm.tgz
+  chmod +x ${INSTALLATION}/bin/helm
+  touch ${INSTALLATION}/rec/helm-${HELM_VERSION}
+fi
+
 YTT_VERSION=v0.11.0
 if [ ! -f ${INSTALLATION}/rec/ytt-${YTT_VERSION} ];then
   wget -O- https://github.com/k14s/ytt/releases/download/${YTT_VERSION}/ytt-linux-amd64 > /tmp/ytt
