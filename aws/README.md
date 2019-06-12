@@ -1,4 +1,6 @@
 
+## Paving AWS
+
 ```
 cp terraform.tfvars.sample terraform.tfvars
 ```
@@ -11,6 +13,7 @@ terraform plan -out plan terraform
 terraform apply plan
 ```
 
+## Deploy Jumpbox
 
 ```
 ./deploy-jumpbox.sh
@@ -19,6 +22,14 @@ terraform apply plan
 ```
 ./ssh-jumpbox.sh
 ```
+
+## Delete Jumpbox
+
+```
+./rm-jumpbox.sh
+```
+
+### Delete AWS
 
 ```
 terraform destroy -force terraform
