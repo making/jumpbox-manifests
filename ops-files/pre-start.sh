@@ -25,10 +25,10 @@ export PATH=${PATH}:/var/vcap/packages/git/bin
 EOF
 
 ########## Install CLI from internet
-export INSTALLATION=/etc/installation
+export INSTALLATION=/var/vcap/store/installation
 mkdir -p ${INSTALLATION}/bin ${INSTALLATION}/rec        
 cat <<'EOF' > /etc/profile.d/00-installation.sh
-export INSTALLATION=/etc/installation
+export INSTALLATION=/var/vcap/store/installation
 export PATH=${PATH}:${INSTALLATION}/bin
 EOF
 
