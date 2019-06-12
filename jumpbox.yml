@@ -24,9 +24,9 @@ instance_groups:
   instances: 1
   stemcell: xenial
   azs: [z1]
-  vm_extensions:
-  - spot-instance-t2.micro
-  - standard-disk
+  # vm_extensions:
+  # - spot-instance-t2.micro
+  # - standard-disk
   vm_type: minimal
   persistent_disk: 2048
   networks:
