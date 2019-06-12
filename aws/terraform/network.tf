@@ -11,7 +11,7 @@ resource "aws_vpc" "vpc" {
 
 resource "aws_subnet" "jumpbox_subnet" {
   vpc_id     = "${local.vpc_id}"
-  cidr_block = "${cidrsubnet(var.vpc_cidr, 8, 0)}"
+  cidr_block = "${cidrsubnet(var.vpc_cidr, 12, 3200)}"
   availability_zone = "${var.availability_zone}"
   tags {
     Name = "${var.env_id}-jumpbox-subnet"
@@ -24,7 +24,7 @@ resource "aws_route_table" "jumpbox_route_table" {
 
 resource "aws_route" "jumpbox_route_table" {
   destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = "${aws_internet_gateway.ig.id}"
+  gateway_id             = "${local.igw_id}"
   route_table_id         = "${aws_route_table.jumpbox_route_table.id}"
 }
 
@@ -33,7 +33,8 @@ resource "aws_route_table_association" "route_jumpbox_subnets" {
   route_table_id = "${aws_route_table.jumpbox_route_table.id}"
 }
 
-resource "aws_internet_gateway" "ig" {
+resource "aws_internet_gateway" "igw" {
+  count  = "${local.igw_count}"
   vpc_id = "${local.vpc_id}"
 }
 

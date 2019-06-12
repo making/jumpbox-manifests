@@ -33,6 +33,12 @@ variable "existing_vpc_id" {
   description = "Optionally use an existing vpc"
 }
 
+variable "existing_igw_id" {
+  type        = "string"
+  default     = ""
+  description = "Optionally use an existing internet gateway"
+}
+
 provider "aws" {
   access_key = "${var.access_key}"
   secret_key = "${var.secret_key}"

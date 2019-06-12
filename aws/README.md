@@ -27,6 +27,7 @@ terraform apply plan
 
 ```
 ./rm-jumpbox.sh
+rm -f jumpbox-creds.yml 
 ```
 
 ### Delete AWS
