@@ -50,6 +50,16 @@ if [ ! -f ${INSTALLATION}/rec/credhub-${CREDHUB_VERSION} ];then
   touch ${INSTALLATION}/rec/credhub-${CREDHUB_VERSION}
 fi
 
+FLY_VERSION=5.3.0
+if [ ! -f ${INSTALLATION}/rec/fly-${FLY_VERSION} ];then
+  wget -O- https://github.com/concourse/concourse/releases/download/v${FLY_VERSION}/fly-${FLY_VERSION}-linux-amd64.tgz > /tmp/fly.tgz
+  tar xzvf /tmp/fly.tgz
+  mv fly ${INSTALLATION}/bin/fly
+  rm -f /tmp/fly.tgz
+  chmod +x ${INSTALLATION}/bin/fly
+  touch ${INSTALLATION}/rec/fly-${FLY_VERSION}
+fi
+
 OM_VERSION=1.1.0
 if [ ! -f ${INSTALLATION}/rec/om-${OM_VERSION} ];then
   wget -O- https://github.com/pivotal-cf/om/releases/download/${OM_VERSION}/om-linux > /tmp/om
