@@ -38,12 +38,10 @@ EOF
   -v internal_cidr=${INTERNAL_CIDR} \
   -v internal_gw=${INTERNAL_GW} \
   -v internal_ip=${INTERNALIP} \
+  -o ${OPS_FILES}/persistent-disk.yml \
   -o ${OPS_FILES}/openjdk.yml \
   -o ${OPS_FILES}/jq.yml \
   -o ${OPS_FILES}/openjdk.yml \
-  -o ${OPS_FILES}/mysql-client.yml \
-  -o ${OPS_FILES}/psql.yml \
-  -o ${OPS_FILES}/awscli.yml \
   -o ${OPS_FILES}/cf-cli.yml \
   -o ${OPS_FILES}/git.yml \
   -o ${OPS_FILES}/login-banner.yml \
@@ -51,6 +49,9 @@ EOF
   -o ${OPS_FILES}/pre-start.yml \
   --var-file=pre-start-script=${OPS_FILES}/pre-start.sh \
   -o <(cat <<EOF
+- type: replace
+  path: /disk_pools/name=disks/cloud_properties?/type
+  value: standard
 - type: replace
   path: /resource_pools/0/cloud_properties/instance_type
   value: t2.micro

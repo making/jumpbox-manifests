@@ -1,0 +1,9 @@
+- type: replace
+  path: /disk_pools?/-
+  value:
+    name: disks
+    disk_size: 20_480
+
+- type: replace
+  path: /instance_groups/name=jumpbox/persistent_disk_pool?
+  value: disks
