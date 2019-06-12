@@ -6,8 +6,6 @@ releases:
   url: https://bosh.io/d/github.com/cloudfoundry/os-conf-release?v=20
   sha1: 42b1295896c1fbcd36b55bfdedfe86782b2c9fba
 
-
-
 stemcells:
 - os: ubuntu-xenial
   alias: xenial
@@ -19,6 +17,7 @@ instance_groups:
   - name: user_add
     release: os-conf
     properties:
+      persistent_homes: true
       users:
       - name: jumpbox
         public_key: ((jumpbox_ssh.public_key))
@@ -29,6 +28,7 @@ instance_groups:
   - spot-instance-t2.micro
   - standard-disk
   vm_type: minimal
+  persistent_disk: 2048
   networks:
   - name: default
 

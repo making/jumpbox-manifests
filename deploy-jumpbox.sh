@@ -9,6 +9,7 @@ bosh -d jumpbox deploy jumpbox.yml \
   -o ops-files/awscli.yml \
   -o ops-files/cf-cli.yml \
   -o ops-files/git-server.yml \
+  -o ops-files/login-banner.yml \
   -o ops-files/pre-start.yml \
   --no-redact \
   $@

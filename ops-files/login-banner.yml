@@ -1,0 +1,15 @@
+- type: replace
+  path: /instance_groups/name=jumpbox/jobs/name=login_banner?
+  value:
+    name: login_banner
+    release: os-conf
+    properties:
+      login_banner:
+        text: |
+          
+          ██████╗  ██████╗ ███████╗██╗  ██╗
+          ██╔══██╗██╔═══██╗██╔════╝██║  ██║
+          ██████╔╝██║   ██║███████╗███████║
+          ██╔══██╗██║   ██║╚════██║██╔══██║
+          ██████╔╝╚██████╔╝███████║██║  ██║
+          ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝
