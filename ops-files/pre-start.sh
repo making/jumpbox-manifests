@@ -147,3 +147,13 @@ if [ ! -f ${INSTALLATION}/rec/kwt-${KWT_VERSION} ];then
   chmod +x ${INSTALLATION}/bin/kwt
   touch ${INSTALLATION}/rec/kwt-${KWT_VERSION}
 fi
+
+VAULT_VERSION=1.1.3
+if [ ! -f ${INSTALLATION}/rec/vault-${VAULT_VERSION} ];then
+  wget -O- https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip> /tmp/vault.zip
+  unzip /tmp/vault.zip
+  mv vault ${INSTALLATION}/bin/vault
+  rm -f /tmp/vault.zip
+  chmod +x ${INSTALLATION}/bin/vault
+  touch ${INSTALLATION}/rec/vault-${VAULT_VERSION}
+fi
